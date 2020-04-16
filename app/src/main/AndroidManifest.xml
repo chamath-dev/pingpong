@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.tfxi.pingpong">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
+    <application
+        android:name=".PingpongApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Report"></activity>
+        <activity android:name=".UsersReport" />
+        <activity android:name=".ActiveDevision" />
+        <activity android:name=".DwvisionBand" />
+
+        <activity android:name=".UnactiveUser" />
+        <activity android:name=".ActiveUser" />
+        <activity android:name=".UserControlPopup" />
+        <activity android:name=".PendingUsers" />
+        <activity android:name=".RequestControl" />
+        <activity android:name=".AcceptRequest" />
+        <activity android:name=".PendingReqest" />
+        <activity android:name=".WorkingUsers" />
+        <activity android:name=".AdminDashboard" />
+        <activity android:name=".UserDashBoard" />
+
+
+
+        <activity android:name=".FinguerprintAuth"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".AfterReg"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".OTPExtenderService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+            <intent-filter>
+                <action android:name="com.onesignal.NotificationExtender" />
+            </intent-filter>
+        </service>
+        <service android:name=".WorkingService"
+            android:enabled="true"
+            android:exported="true"
+            />
+
+        <meta-data
+            android:name="com.onesignal.NotificationOpened.DEFAULT"
+            android:value="DISABLE" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
